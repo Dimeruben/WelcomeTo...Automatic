@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/zCardTop"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/zCardBot"
+        app:layout_constraintEnd_toEndOf="@id/zCardBot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/Card1"
+            android:layout_width="117dp"
+            android:layout_height="match_parent"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/imagen1" />
+
+        <ImageView
+            android:id="@+id/Card2"
+            android:layout_width="184dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/imagen2" />
+
+        <ImageView
+            android:id="@+id/Card3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/imagen3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/zCardBot"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/zInfoDeck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/zCardTop">
+
+        <ImageView
+            android:id="@+id/Card4"
+            android:layout_width="117dp"
+            android:layout_height="match_parent"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/imagen1" />
+
+        <ImageView
+            android:id="@+id/Card5"
+            android:layout_width="184dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/imagen2" />
+
+        <ImageView
+            android:id="@+id/Card6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/imagen3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/zInfoDeck"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/draw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zCardBot">
+
+        <TextView
+            android:id="@+id/TextBaraja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cartas en la baraja"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <TextView
+            android:id="@+id/nDeck"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="50"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/zButtons"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_60sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/zObj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/zInfoDeck"
+        app:layout_constraintTop_toBottomOf="@+id/zInfoDeck">
+
+        <Button
+            android:id="@+id/draw"
+            android:layout_width="133dp"
+            android:layout_height="match_parent"
+            android:text="Draw" />
+
+        <Button
+            android:id="@+id/Objetivo"
+            android:layout_width="136dp"
+            android:layout_height="match_parent"
+            android:text="Objetivo" />
+
+        <Button
+            android:id="@+id/baraja"
+            android:layout_width="134dp"
+            android:layout_height="match_parent"
+            android:text="Baraja" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/zObj"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zButtons">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/obj1_1" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/obj2_1" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/obj3_1" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
