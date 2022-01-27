@@ -18,31 +18,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <TextView
             android:id="@+id/Card1"
-            android:layout_width="117dp"
+            android:layout_width="136dp"
             android:layout_height="match_parent"
-            android:cropToPadding="false"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/imagen1" />
+            android:gravity="center_horizontal|center_vertical"
+            android:text="5"
+            android:textSize="@dimen/_70sdp" />
 
-        <ImageView
+        <TextView
             android:id="@+id/Card2"
-            android:layout_width="184dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:cropToPadding="false"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/imagen2" />
+            android:gravity="center_horizontal|center_vertical"
+            android:textSize="@dimen/_70sdp"
+            android:text="10" />
 
-        <ImageView
+        <TextView
             android:id="@+id/Card3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:cropToPadding="false"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/imagen3" />
+            android:gravity="center_horizontal|center_vertical"
+            android:textSize="@dimen/_70sdp"
+            android:text="4" />
+
 
     </LinearLayout>
 
@@ -58,7 +59,7 @@
 
         <ImageView
             android:id="@+id/Card4"
-            android:layout_width="117dp"
+            android:layout_width="134dp"
             android:layout_height="match_parent"
             android:cropToPadding="false"
             android:scaleType="centerCrop"
@@ -66,7 +67,7 @@
 
         <ImageView
             android:id="@+id/Card5"
-            android:layout_width="184dp"
+            android:layout_width="229dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:cropToPadding="false"
@@ -89,7 +90,6 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/draw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/zCardBot">
@@ -151,7 +151,7 @@
         app:layout_constraintTop_toBottomOf="@+id/zButtons">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/Obj1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -159,7 +159,7 @@
             app:srcCompat="@drawable/obj1_1" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/Obj2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -167,7 +167,7 @@
             app:srcCompat="@drawable/obj2_1" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/Obj3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
