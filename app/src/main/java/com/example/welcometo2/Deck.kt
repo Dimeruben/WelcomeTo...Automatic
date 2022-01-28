@@ -10,7 +10,8 @@ package com.example.welcometo2
 
 class Deck {
 
-    var cards:   MutableList<Card> = mutableListOf()
+    var  cards:   MutableList<Card> = mutableListOf()
+    var  posInDeck : Int  = 0
 
     init {
 
@@ -105,6 +106,7 @@ class Deck {
      */
     fun shuffle() {
         cards.shuffle()
+        posInDeck = 0
     }
 
     /**
@@ -113,28 +115,25 @@ class Deck {
      * @note use with ?. as the return type is nullable
      */
     fun draw() {
-        repeat(3){
-            if (cards.isNotEmpty()) { cards.removeAt(0) }
-        }
+        if (posInDeck<cards.size-6) { posInDeck = posInDeck + 3}
+    }
+
+    fun back(){
+        if (posInDeck>=3) { posInDeck = posInDeck - 3}
     }
 
     fun numberAt(i:Int): Int {
-        return cards.elementAt(i).number
+        return cards.elementAt(i+posInDeck).number
     }
 
     fun actionAt(i:Int): Int {
-        return cards.elementAt(i).action
+        return cards.elementAt(i+posInDeck).action
     }
     /**
      *@return Size of the deck
      */
-    fun getSize(): Int = cards.size - 3
+    fun getSize(): Int = cards.size - posInDeck-3
 
-    /**
-     *
-     * Prints all the deck to a given OutputStream
-     * @param outputStream
-     */
 
 }
 

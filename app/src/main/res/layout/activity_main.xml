@@ -133,7 +133,7 @@
             android:text="Objetivo" />
 
         <Button
-            android:id="@+id/baraja"
+            android:id="@+id/restart"
             android:layout_width="134dp"
             android:layout_height="match_parent"
             android:text="Baraja" />

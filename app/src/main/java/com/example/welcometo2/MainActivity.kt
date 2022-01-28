@@ -4,8 +4,13 @@ import android.app.Notification
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.welcometo2.databinding.ActivityMainBinding
+import android.app.AlertDialog
+import android.content.DialogInterface
+
 
 class MainActivity : AppCompatActivity() {
+
+    public lateinit var binding:ActivityMainBinding;
 
     var deck = Deck()
 
@@ -45,12 +50,6 @@ class MainActivity : AppCompatActivity() {
     )
 
 
-
-
-    public lateinit var binding:ActivityMainBinding;
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -59,26 +58,58 @@ class MainActivity : AppCompatActivity() {
         val  binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.baraja?.setOnClickListener {
-            deck=Deck()
-            deck.shuffle()
-            printLayout(binding)
 
-        }
 
         binding.draw?.setOnClickListener{
             deck.draw()
             printLayout(binding)
         }
 
-        binding.Objetivo?.setOnClickListener{
+        binding.back?.setOnClickListener{
+            deck.back()
+            printLayout(binding)
+        }
+
+        binding.restart?.setOnClickListener {
 
 
-            binding.Obj1?.setImageResource(obj1Fig.get(random(4)))
-            binding.Obj2?.setImageResource(obj2Fig.get(random(5)))
-            binding.Obj3?.setImageResource(obj3Fig.get(random(5)))
+            // build alert dialog
+            val dialogBuilder = AlertDialog.Builder(this)
+
+
+            // set message of alert dialog
+            dialogBuilder.setMessage("Do you want to start a new game?")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                // positive button text and action
+                .setPositiveButton("Proceed", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.cancel()
+
+                    deck=Deck()
+                    deck.shuffle()
+
+                    binding.Obj1?.setImageResource(obj1Fig.get(random(4)))
+                    binding.Obj2?.setImageResource(obj2Fig.get(random(5)))
+                    binding.Obj3?.setImageResource(obj3Fig.get(random(5)))
+
+                    printLayout(binding)
+
+                })
+                // negative button text and action
+                .setNegativeButton("Cancel", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.cancel()
+                })
+
+            // create dialog box
+            val alert = dialogBuilder.create()
+
+            // show alert dialog
+            alert.show()
+
 
         }
+
+
 
     }
 
@@ -94,12 +125,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.nDeck?.setText(deck.getSize().toString())
 
-
     }
 
     fun random(num:Int): Int {
         val random1 = (0..num).shuffled().last()
         return random1
     }
+
+
+
+
 
 }
