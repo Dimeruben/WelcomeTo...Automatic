@@ -6,6 +6,9 @@ import android.os.Bundle
 import com.example.welcometo2.databinding.ActivityMainBinding
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.widget.EditText
+import android.widget.Toast
+import android.media.MediaPlayer
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         R.drawable.obj1_2,
         R.drawable.obj1_3,
         R.drawable.obj1_4,
-        R.drawable.obj1_5
+        R.drawable.obj1_5,
+        R.drawable.obj1_6
     )
 
     var obj2Fig = listOf<Int>(
@@ -61,6 +65,8 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.draw?.setOnClickListener{
+            var  drawSound: MediaPlayer = MediaPlayer.create(this, R.raw.draw)
+            drawSound.start()
             deck.draw()
             printLayout(binding)
         }
@@ -70,7 +76,16 @@ class MainActivity : AppCompatActivity() {
             printLayout(binding)
         }
 
+
+        binding.restart?.setOnLongClickListener{
+
+            Toast.makeText(this, "Long click detected", Toast.LENGTH_SHORT).show()
+            true
+
+        }
+
         binding.restart?.setOnClickListener {
+
 
 
             // build alert dialog
@@ -79,16 +94,21 @@ class MainActivity : AppCompatActivity() {
 
             // set message of alert dialog
             dialogBuilder.setMessage("Do you want to start a new game?")
+
+
                 // if the dialog is cancelable
                 .setCancelable(false)
                 // positive button text and action
                 .setPositiveButton("Proceed", DialogInterface.OnClickListener {
                         dialog, id -> dialog.cancel()
 
+                    var barajaSound : MediaPlayer= MediaPlayer.create(this, R.raw.baraja)
+                    barajaSound.start()
+
                     deck=Deck()
                     deck.shuffle()
 
-                    binding.Obj1?.setImageResource(obj1Fig.get(random(4)))
+                    binding.Obj1?.setImageResource(obj1Fig.get(random(5)))
                     binding.Obj2?.setImageResource(obj2Fig.get(random(5)))
                     binding.Obj3?.setImageResource(obj3Fig.get(random(5)))
 

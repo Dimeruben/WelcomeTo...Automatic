@@ -4,11 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2390625" />
+        <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/drawable/circle_button.xml" value="0.29583333333333334" />
         <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2390625" />
         <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/layout-land/activity_main.xml" value="0.18871252204585537" />
-        <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/layout-port/activity_main.xml" value="0.17844202898550723" />
+        <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/layout-port/activity_main.xml" value="0.335" />
         <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/layout/activity_main1.xml" value="0.1875" />
+        <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/dimer/AndroidStudioProjects/WelcomeTo2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22239583333333332" />
       </map>
     </option>
   </component>
