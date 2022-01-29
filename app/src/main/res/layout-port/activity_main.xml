@@ -204,6 +204,7 @@
             android:id="@+id/Obj1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="@dimen/_2sdp"
             android:layout_weight="1"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/obj1_1" />
@@ -212,6 +213,7 @@
             android:id="@+id/Obj2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="@dimen/_2sdp"
             android:layout_weight="1"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/obj2_1" />

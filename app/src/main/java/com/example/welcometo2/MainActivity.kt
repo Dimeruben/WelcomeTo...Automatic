@@ -9,6 +9,8 @@ import android.content.DialogInterface
 import android.widget.EditText
 import android.widget.Toast
 import android.media.MediaPlayer
+import android.content.res.Configuration
+import android.text.InputType
 
 
 class MainActivity : AppCompatActivity() {
@@ -82,10 +84,10 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Long click detected", Toast.LENGTH_SHORT).show()
             true
 
+
         }
 
         binding.restart?.setOnClickListener {
-
 
 
             // build alert dialog

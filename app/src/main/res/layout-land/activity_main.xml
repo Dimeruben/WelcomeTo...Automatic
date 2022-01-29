@@ -10,29 +10,63 @@
 
 
     <LinearLayout
-        android:id="@+id/Cards"
-        android:layout_width="@dimen/_300sdp"
-        android:layout_height="match_parent"
+        android:id="@+id/zInfoDeck"
+        android:layout_width="374dp"
+        android:layout_height="44dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        android:weightSum="7"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Cards"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/TextBaraja"
+            android:layout_width="298dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_2sdp"
+            android:background="@color/bone"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Cards in Deck       "
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/nDeck"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:background="@color/bone"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="78"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Cards"
+        android:layout_width="255dp"
+        android:layout_height="350dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/zCardTop"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="3"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:weightSum="3">
 
             <TextView
                 android:id="@+id/Card1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_margin="@dimen/_2sdp"
                 android:layout_weight="1"
                 android:background="#CCB382"
@@ -43,8 +77,8 @@
 
             <TextView
                 android:id="@+id/Card2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_margin="@dimen/_2sdp"
                 android:layout_weight="1"
                 android:background="#CCB382"
@@ -55,8 +89,8 @@
 
             <TextView
                 android:id="@+id/Card3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_margin="@dimen/_2sdp"
                 android:layout_weight="1"
                 android:background="#CCB382"
@@ -70,15 +104,15 @@
 
         <LinearLayout
             android:id="@+id/zCardBot"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="3"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/Card4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_margin="@dimen/_2sdp"
                 android:layout_weight="1"
                 android:cropToPadding="false"
@@ -87,8 +121,8 @@
 
             <ImageView
                 android:id="@+id/Card5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_margin="@dimen/_2sdp"
                 android:layout_weight="1"
                 android:cropToPadding="false"
@@ -97,8 +131,8 @@
 
             <ImageView
                 android:id="@+id/Card6"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_margin="@dimen/_2sdp"
                 android:layout_weight="1"
                 android:background="#AFA7A7"
@@ -108,37 +142,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/zInfoDeck"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/TextBaraja"
-                android:layout_width="298dp"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/_2sdp"
-                android:background="@color/bone"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="Cards in Deck       "
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/nDeck"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/_2sdp"
-                android:layout_weight="1"
-                android:background="@color/bone"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="78"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="@color/white" />
-        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -147,12 +150,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_2sdp"
         android:gravity="center_horizontal|center_vertical"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:weightSum="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/zObj"
-        app:layout_constraintStart_toEndOf="@id/Cards"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/zInfoDeck"
+        app:layout_constraintEnd_toStartOf="@+id/Cards"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zObj">
 
         <Button
             android:id="@+id/restart"
@@ -170,8 +173,8 @@
         <Button
             android:id="@+id/draw"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="133dp"
-            android:layout_height="match_parent"
+            android:layout_width="79dp"
+            android:layout_height="65dp"
             android:layout_margin="@dimen/_2sdp"
             android:background="@drawable/circle_button"
             android:backgroundTint="#59574C"
@@ -196,20 +199,19 @@
 
     <LinearLayout
         android:id="@+id/zObj"
-        android:layout_width="128dp"
+        android:layout_width="0dp"
 
-        android:layout_height="0dp"
-        android:layout_marginStart="7dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/zButtons"
+        android:layout_height="168dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/Cards"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/Obj1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="2dp"
             android:layout_weight="1"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/obj1_1" />
@@ -218,6 +220,7 @@
             android:id="@+id/Obj2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="2dp"
             android:layout_weight="1"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/obj2_1" />
@@ -226,7 +229,7 @@
             android:id="@+id/Obj3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/_2sdp"
+            android:layout_margin="2dp"
             android:layout_weight="1"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/obj3_1" />
