@@ -26,7 +26,9 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_2sdp"
             android:layout_weight="1"
-            android:background="#CCB382" />
+            android:background="#CCB382"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/tile001" />
 
         <ImageView
             android:id="@+id/Card2"
@@ -34,7 +36,9 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_2sdp"
             android:layout_weight="1"
-            android:background="#CCB382" />
+            android:background="#CCB382"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/tile001" />
 
         <ImageView
             android:id="@+id/Card3"
@@ -42,7 +46,9 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_2sdp"
             android:layout_weight="1"
-            android:background="#CCB382" />
+            android:background="#CCB382"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/tile001" />
 
 
     </LinearLayout>
