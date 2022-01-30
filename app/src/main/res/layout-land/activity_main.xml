@@ -63,41 +63,29 @@
             android:orientation="vertical"
             android:weightSum="3">
 
-            <TextView
+            <ImageView
                 android:id="@+id/Card1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/_2sdp"
                 android:layout_weight="1"
-                android:background="#CCB382"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="5"
-                android:textSize="@dimen/_70sdp"
-                tools:layout_weight="1" />
+                android:background="#CCB382" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/Card2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/_2sdp"
                 android:layout_weight="1"
-                android:background="#CCB382"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="10"
-                android:textSize="@dimen/_70sdp"
-                tools:layout_weight="1" />
+                android:background="#CCB382" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/Card3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/_2sdp"
                 android:layout_weight="1"
-                android:background="#CCB382"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="4"
-                android:textSize="@dimen/_70sdp"
-                tools:layout_weight="1" />
+                android:background="#CCB382" />
 
 
         </LinearLayout>

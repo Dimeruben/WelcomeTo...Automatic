@@ -11,6 +11,8 @@ import android.widget.EditText
 import android.widget.Toast
 import android.media.MediaPlayer
 import android.content.res.Configuration
+import android.graphics.BitmapFactory
+import android.os.PersistableBundle
 import android.text.InputType
 import kotlin.random.Random
 import android.widget.TextView
@@ -21,10 +23,29 @@ class MainActivity : AppCompatActivity() {
 
     public lateinit var binding:ActivityMainBinding;
 
-
     var gameseed : Int = Random.nextInt(2147483646)
     var deck = Deck(gameseed)
 
+    var numFig = listOf<Int>(
+        R.drawable.tile000,
+        R.drawable.tile001,
+        R.drawable.tile002,
+        R.drawable.tile003,
+        R.drawable.tile004,
+        R.drawable.tile005,
+        R.drawable.tile006,
+        R.drawable.tile007,
+        R.drawable.tile008,
+        R.drawable.tile009,
+        R.drawable.tile010,
+        R.drawable.tile011,
+        R.drawable.tile012,
+        R.drawable.tile013,
+        R.drawable.tile014,
+        R.drawable.tile015,
+        R.drawable.tile016,
+        R.drawable.tile017
+    )
     var actionFig = listOf<Int>(
         R.drawable.imagen1,
         R.drawable.imagen2,
@@ -64,12 +85,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
 
         val  binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        printLayout(binding)
 
         binding.draw?.setOnClickListener{
             var  drawSound: MediaPlayer = MediaPlayer.create(this, R.raw.draw)
@@ -124,7 +144,6 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-
 
         binding.restart?.setOnLongClickListener(){
 
@@ -206,21 +225,15 @@ class MainActivity : AppCompatActivity() {
 
             // show alert dialog
             window.show()
-
-
-
-
         }
-
-
 
     }
 
     fun printLayout(binding: ActivityMainBinding) {
 
-        binding.Card1?.setText(deck.numberAt(3).toString())
-        binding.Card2?.setText(deck.numberAt(4).toString())
-        binding.Card3?.setText(deck.numberAt(5).toString())
+        binding.Card1?.setImageResource(numFig.get(deck.numberAt(0)))
+        binding.Card2?.setImageResource(numFig.get(deck.numberAt(1)))
+        binding.Card3?.setImageResource(numFig.get(deck.numberAt(2)))
 
         binding.Card4?.setImageResource(actionFig.get(deck.actionAt(0)-1))
         binding.Card5?.setImageResource(actionFig.get(deck.actionAt(1)-1))
@@ -230,9 +243,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     fun startGame(binding: ActivityMainBinding ){
-
 
     }
 
