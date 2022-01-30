@@ -5,19 +5,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.welcometo2.databinding.ActivityMainBinding
 import android.app.AlertDialog
+import android.content.ClipboardManager
 import android.content.DialogInterface
 import android.widget.EditText
 import android.widget.Toast
 import android.media.MediaPlayer
 import android.content.res.Configuration
 import android.text.InputType
+import kotlin.random.Random
+import android.widget.TextView
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
 
     public lateinit var binding:ActivityMainBinding;
 
-    var deck = Deck()
+
+    var gameseed : Int = Random.nextInt(2147483646)
+    var deck = Deck(gameseed)
 
     var actionFig = listOf<Int>(
         R.drawable.imagen1,
@@ -65,7 +71,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-
         binding.draw?.setOnClickListener{
             var  drawSound: MediaPlayer = MediaPlayer.create(this, R.raw.draw)
             drawSound.start()
@@ -76,27 +81,102 @@ class MainActivity : AppCompatActivity() {
         binding.back?.setOnClickListener{
             deck.back()
             printLayout(binding)
+
         }
 
+        binding.back?.setOnLongClickListener {
 
-        binding.restart?.setOnLongClickListener{
 
-            Toast.makeText(this, "Long click detected", Toast.LENGTH_SHORT).show()
+
+            // The TextView to show your Text
+            // The TextView to show your Text
+            val showText = TextView(this)
+            showText.text = gameseed.toString()
+            showText.setTextIsSelectable(true)
+
+            showText.setOnClickListener(){
+
+                    // Copy the Text to the clipboard
+                    val manager: ClipboardManager =
+                        getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+
+                    manager.text = showText.text
+
+                    // Show a message:
+                    Toast.makeText(
+                        this, "Text in clipboard",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+
+                true
+            }
+
+            val builder = AlertDialog.Builder(this)
+            // Build the Dialog
+            // Build the Dialog
+            builder.setView(showText)
+                .setTitle("Game Seed")
+                .setCancelable(true)
+                .show()
+
             true
 
 
         }
 
+
+        binding.restart?.setOnLongClickListener(){
+
+            val alert = AlertDialog.Builder(this)
+            alert.setTitle("Insert Seed (number)")
+            val inputText = EditText(this)
+            alert.setView(inputText)
+            alert.setPositiveButton(
+                "Ok"
+            ) { dialog, whichButton ->
+                val value = inputText.text.toString()
+                try {
+
+                    val gameseed = value.toInt()
+
+                    var barajaSound: MediaPlayer = MediaPlayer.create(this, R.raw.baraja)
+                    barajaSound.start()
+
+                    deck = Deck(gameseed)
+
+                    binding.Obj1?.setImageResource(obj1Fig.get(Random(gameseed).nextInt(5)))
+                    binding.Obj2?.setImageResource(obj2Fig.get(Random(gameseed).nextInt(5)))
+                    binding.Obj3?.setImageResource(obj3Fig.get(Random(gameseed).nextInt(5)))
+
+                    printLayout(binding)
+
+                } catch (e: Exception) {
+                    val alertErrore = AlertDialog.Builder(
+                        applicationContext
+                    )
+                    alertErrore.setTitle("Error")
+                    alertErrore.setMessage("Number not valid")
+                    alertErrore.show()
+                }
+            }
+
+            // Showing Alert Message
+            alert.show()
+
+            true
+
+        }
+
         binding.restart?.setOnClickListener {
 
+            gameseed = Random.nextInt(2147483646)
 
             // build alert dialog
             val dialogBuilder = AlertDialog.Builder(this)
 
-
             // set message of alert dialog
             dialogBuilder.setMessage("Do you want to start a new game?")
-
 
                 // if the dialog is cancelable
                 .setCancelable(false)
@@ -107,12 +187,11 @@ class MainActivity : AppCompatActivity() {
                     var barajaSound : MediaPlayer= MediaPlayer.create(this, R.raw.baraja)
                     barajaSound.start()
 
-                    deck=Deck()
-                    deck.shuffle()
+                    deck.shuffle(gameseed)
 
-                    binding.Obj1?.setImageResource(obj1Fig.get(random(5)))
-                    binding.Obj2?.setImageResource(obj2Fig.get(random(5)))
-                    binding.Obj3?.setImageResource(obj3Fig.get(random(5)))
+                    binding.Obj1?.setImageResource(obj1Fig.get(Random(gameseed).nextInt(5)))
+                    binding.Obj2?.setImageResource(obj2Fig.get(Random(gameseed).nextInt(5)))
+                    binding.Obj3?.setImageResource(obj3Fig.get(Random(gameseed).nextInt(5)))
 
                     printLayout(binding)
 
@@ -123,10 +202,12 @@ class MainActivity : AppCompatActivity() {
                 })
 
             // create dialog box
-            val alert = dialogBuilder.create()
+            val window = dialogBuilder.create()
 
             // show alert dialog
-            alert.show()
+            window.show()
+
+
 
 
         }
@@ -149,13 +230,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun random(num:Int): Int {
-        val random1 = (0..num).shuffled().last()
-        return random1
+
+    fun startGame(binding: ActivityMainBinding ){
+
+
     }
-
-
-
 
 
 }

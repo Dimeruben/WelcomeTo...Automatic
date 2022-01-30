@@ -1,5 +1,7 @@
 package com.example.welcometo2
 
+import kotlin.random.Random
+
 
 /**
  * Deck class
@@ -8,10 +10,11 @@ package com.example.welcometo2
  */
 
 
-class Deck {
+class Deck(gameseed:Int) {
 
     var  cards:   MutableList<Card> = mutableListOf()
     var  posInDeck : Int  = 0
+
 
     init {
 
@@ -97,13 +100,18 @@ class Deck {
         cards.add(Card(8	,3))
         cards.add(Card(13,4))
 
-        cards.shuffle()
+        cards.shuffle(Random(gameseed))
 
     }
 
     /**
      * Shuffles the cards list
      */
+    fun shuffle(gameseed: Int) {
+
+        cards.shuffle(Random(gameseed))
+        posInDeck = 0
+    }
     fun shuffle() {
         cards.shuffle()
         posInDeck = 0
